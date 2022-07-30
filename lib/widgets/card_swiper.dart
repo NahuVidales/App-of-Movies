@@ -1,4 +1,5 @@
 import 'package:card_swiper/card_swiper.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class CardSwiper extends StatelessWidget {
@@ -9,17 +10,23 @@ class CardSwiper extends StatelessWidget {
     final size = MediaQuery.of(context).size;
 
     return Container(
-      height: size.height * 0.9,
+      height: size.height * 0.4,
       width: double.infinity,
-      color: Colors.red,
+      color: Colors.grey[850],
       child: Swiper(itemCount: 10,
       itemWidth: size.width * 40,
       layout: SwiperLayout.STACK,
       itemHeight: size.height * 50,
       itemBuilder: (BuildContext context, int index) {
-        return FadeInImage(
-          placeholder: AssetImage('assets\loading.gif'),
-          image: NetworkImage('https://images.unsplash.com/photo-1617703376300-58b4220ffc0b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=327&q=80'));
+          return GestureDetector(
+            onTap: () => Navigator.pushNamed(context, ('details') , arguments: 'Movie'),
+            child: ClipRRect(
+            borderRadius: BorderRadius.circular(20),
+            child: FadeInImage(
+              placeholder: AssetImage('assets/loading.gif'),
+              image: NetworkImage('https://robledocars.com/wp-content/uploads/2022/05/IMG_6703.jpg'),),
+                  ),
+          );
       },
       ),
     );

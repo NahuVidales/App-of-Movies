@@ -18,14 +18,19 @@ class CardSwiper extends StatelessWidget {
       layout: SwiperLayout.STACK,
       itemHeight: size.height * 50,
       itemBuilder: (BuildContext context, int index) {
+
           return GestureDetector(
-            onTap: () => Navigator.pushNamed(context, ('details') , arguments: 'Movie'),
-            child: ClipRRect(
-            borderRadius: BorderRadius.circular(20),
-            child: FadeInImage(
-              placeholder: AssetImage('assets/loading.gif'),
-              image: NetworkImage('https://robledocars.com/wp-content/uploads/2022/05/IMG_6703.jpg'),),
-                  ),
+              onTap: () => Navigator.pushNamed(context, ('details') , arguments: 'Movie'),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(10),
+                child: FadeInImage(
+                  placeholder: AssetImage('assets/loading.gif'),
+                  image: NetworkImage('https://robledocars.com/wp-content/uploads/2022/05/IMG_6703.jpg'),
+                  height: 160,
+                  width: 120,
+                  fit: BoxFit.cover,),
+              ),
+       
           );
       },
       ),

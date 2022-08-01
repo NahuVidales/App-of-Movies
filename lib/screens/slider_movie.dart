@@ -8,7 +8,6 @@ class SliderMovie extends StatelessWidget {
     return Container(
       width: double.infinity,
       height: 250,
-      color: Colors.orange,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -29,14 +28,18 @@ class SliderMovie extends StatelessWidget {
 }
 
 class _MoviesScroll extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     return Container(
       width: 120,
       height: 180,
-      color: Colors.indigo,
       margin: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+      child: Column(
+        children: [
+          FadeInImage(
+          placeholder: AssetImage('assets/loading.gif'),
+          image: NetworkImage('https://via.placeholder.com/300x400'))],
+      ),
     );
   }
 }

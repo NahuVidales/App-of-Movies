@@ -5,21 +5,22 @@ class SliderMovie extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       width: double.infinity,
       height: 250,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Padding(
+          const Padding(
             padding: EdgeInsets.symmetric(horizontal: 20),
-            child: Text('Lo que quieres ver'),
+            child: Text('Lo que quieres ver', style: TextStyle(fontSize: 20)),
           ),
           Expanded(
             child: ListView.builder(
+                
                 scrollDirection: Axis.horizontal,
-                itemCount: 20,
-                itemBuilder: (context, index) => _MoviesScroll()),
+                itemCount: 200,
+                itemBuilder: (context, index) => _MoviesScroll(),),
           )
         ],
       ),
@@ -33,12 +34,12 @@ class _MoviesScroll extends StatelessWidget {
     return Container(
       width: 120,
       height: 180,
-      margin: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+      margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
       child: Column(
         children: [
-          FadeInImage(
+          const FadeInImage(
           placeholder: AssetImage('assets/loading.gif'),
-          image: NetworkImage('https://via.placeholder.com/300x400'))],
+          image: NetworkImage('https://via.placeholder.com/300x400'),)],
       ),
     );
   }

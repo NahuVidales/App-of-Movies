@@ -3,6 +3,8 @@ import 'package:movie_app/screens/screens.dart';
 import 'package:movie_app/widgets/widgets.dart';
 
 class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -13,6 +15,7 @@ class HomeScreen extends StatelessWidget {
       body: Column(
         children: [
         CardSwiper(),
+        SizedBox(height: 10,),
         SliderMovie()
         ],
       ),

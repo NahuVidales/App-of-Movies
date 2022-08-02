@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:movie_app/screens/screens.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -11,8 +13,8 @@ class MyApp extends StatelessWidget {
       title: 'Peliculas',
       initialRoute: 'home',
       routes: {
-        'home': (context) => HomeScreen(),
-        'details': (context) => DetailsScreen()
+        'home': (context) => const HomeScreen(),
+        'details': (context) => const DetailsScreen()
       },
       theme: ThemeData.dark().copyWith(
           appBarTheme: const AppBarTheme(

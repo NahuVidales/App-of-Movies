@@ -1,7 +1,14 @@
 import 'package:card_swiper/card_swiper.dart';
 import 'package:flutter/material.dart';
 
-class CardSwiper extends StatelessWidget {
+class CardSwiper extends StatefulWidget {
+  const CardSwiper({super.key});
+
+  @override
+  State<CardSwiper> createState() => _CardSwiperState();
+}
+
+class _CardSwiperState extends State<CardSwiper> {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -23,7 +30,7 @@ class CardSwiper extends StatelessWidget {
               child: const FadeInImage(
                 placeholder: AssetImage('assets/loading.gif'),
                 image: NetworkImage(
-                    'https://robledocars.com/wp-content/uploads/2022/05/IMG_6703.jpg'),
+                    'https://robledocars.com/wp-content/uploads/2022/05/IMG_6703.jpg',),
                 height: 160,
                 width: 120,
                 fit: BoxFit.cover,

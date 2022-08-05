@@ -13,7 +13,7 @@ class HomeScreen extends StatelessWidget {
         title: const Text('HomeScreen'),
       ),
       body: Column(
-        children: [
+        children: const [
         CardSwiper(),
         SizedBox(height: 10,),
         SliderMovie()

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class SliderMovie extends StatelessWidget {
-  const SliderMovie({Key? key}) : super(key: key);
+  const SliderMovie({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -36,8 +36,8 @@ class _MoviesScroll extends StatelessWidget {
       height: 180,
       margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
       child: Column(
-        children: [
-          const FadeInImage(
+        children: const [
+          FadeInImage(
           placeholder: AssetImage('assets/loading.gif'),
           image: NetworkImage('https://via.placeholder.com/300x400'),)],
       ),

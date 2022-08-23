@@ -24,13 +24,15 @@ class _CardSwiperState extends State<CardSwiper> {
         itemHeight: size.height * 50,
         itemBuilder: (BuildContext context, int index) {
           return GestureDetector(
-            onTap: () =>  Navigator.pushNamed(context, 'details', arguments: 'Movie'),
+            onTap: () =>
+                Navigator.pushNamed(context, 'details', arguments: 'Movie'),
             child: ClipRRect(
               borderRadius: BorderRadius.circular(10),
               child: const FadeInImage(
                 placeholder: AssetImage('assets/loading.gif'),
                 image: NetworkImage(
-                    'https://robledocars.com/wp-content/uploads/2022/05/IMG_6703.jpg',),
+                  'https://robledocars.com/wp-content/uploads/2022/05/IMG_6703.jpg',
+                ),
                 height: 160,
                 width: 120,
                 fit: BoxFit.cover,

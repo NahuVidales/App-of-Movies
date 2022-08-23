@@ -39,7 +39,7 @@ class _MoviesScroll extends StatelessWidget {
         children: const [
           FadeInImage(
           placeholder: AssetImage('assets/loading.gif'),
-          image: NetworkImage('https://via.placeholder.com/300x400'),)],
+          image: NetworkImage('https://img.remediosdigitales.com/40801b/volkswagen-scirocco-2014-r-line-01/1366_2000.jpg'),)],
       ),
     );
   }

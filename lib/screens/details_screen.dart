@@ -40,7 +40,7 @@ class _CustomAppBar extends StatelessWidget {
         background: FadeInImage(
           placeholder: AssetImage('assets/loading.gif'),
           image: NetworkImage(
-              'https://robledocars.com/wp-content/uploads/2022/05/IMG_6703.jpg'),
+              'https://robledocars.com/wp-content/uploads/2022/05/IMG_6703.jpg',),
           fit: BoxFit.cover,
         ),
       ),

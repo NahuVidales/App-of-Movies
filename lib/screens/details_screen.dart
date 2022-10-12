@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:movie_app/widgets/widgets.dart';
 
 class DetailsScreen extends StatelessWidget {
   const DetailsScreen({super.key});
@@ -15,11 +16,13 @@ class DetailsScreen extends StatelessWidget {
           _CustomAppBar(),
           SliverList(
             delegate: SliverChildListDelegate([
+              SizedBox(height: 10),
               _MoviePoster(),
               _Overview(),
               _Overview(),
               _Overview(),
-              SizedBox(height: 1000,)
+              SizedBox(height: 10,),
+              CastingCards()
             ])
       )],
       ),
@@ -40,7 +43,7 @@ class _CustomAppBar extends StatelessWidget {
         background: FadeInImage(
           placeholder: AssetImage('assets/loading.gif'),
           image: NetworkImage(
-              'https://robledocars.com/wp-content/uploads/2022/05/IMG_6703.jpg',),
+              'https://images.unsplash.com/photo-1617703359703-aefa624bd279?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1031&q=80',),
           fit: BoxFit.cover,
         ),
       ),
@@ -51,14 +54,14 @@ class _CustomAppBar extends StatelessWidget {
 class _MoviePoster extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return Row(
       children: [
         ClipRRect(
-          borderRadius: BorderRadius.circular(10),
+          borderRadius: BorderRadius.circular(30),
           child: const FadeInImage(
             placeholder: AssetImage('assets/loading.gif'),
             image: NetworkImage(
-                'https://robledocars.com/wp-content/uploads/2022/05/IMG_6703.jpg'),
+                'https://images.unsplash.com/photo-1617703359703-aefa624bd279?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1031&q=80', scale: 5),
           ),
         ),
         const SizedBox(
@@ -82,8 +85,8 @@ class _Overview extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric( horizontal: 30, vertical: 10),
-      child: Text('Saluteeeeeeee',
+      padding: EdgeInsets.symmetric( horizontal: 20, vertical: 10),
+      child: Text('Ut dolore commodo anim laboris dolor esse duis.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
         textAlign: TextAlign.justify,
         style: Theme.of(context).textTheme.subtitle1,
       ),

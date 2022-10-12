@@ -31,7 +31,7 @@ class _CardSwiperState extends State<CardSwiper> {
               child: const FadeInImage(
                 placeholder: AssetImage('assets/loading.gif'),
                 image: NetworkImage(
-                  'https://robledocars.com/wp-content/uploads/2022/05/IMG_6703.jpg',
+                  'https://images.unsplash.com/photo-1617703359703-aefa624bd279?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1031&q=80',
                 ),
                 height: 160,
                 width: 120,

@@ -39,7 +39,7 @@ class _CustomAppBar extends StatelessWidget {
       expandedHeight: 300,
       flexibleSpace: FlexibleSpaceBar(
         centerTitle: true,
-        title: Text('Movies detail'),
+        title: Text('Scirocco details'),
         background: FadeInImage(
           placeholder: AssetImage('assets/loading.gif'),
           image: NetworkImage(
@@ -70,8 +70,8 @@ class _MoviePoster extends StatelessWidget {
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text('title Movie', style: const TextTheme().headline1),
-            Text('Descryption Movie', style: const TextTheme().subtitle1)
+            Text('title Car', style: const TextTheme().headline1),
+            Text('Descryption Car', style: const TextTheme().subtitle1)
           ],
         )
       ],

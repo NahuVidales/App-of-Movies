@@ -1,11 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:movie_app/screens/screens.dart';
 
-void main() => runApp(const MyApp());
+void main() => runApp(AppState());
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
 
+class AppState extends StatelessWidget {
+
+  @override
+  Widget build(BuildContext context) {
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: ( _ ) => MoviesProvider(), lazy: false ),
+      ],
+      child: MyApp(),
+    );
+  }
+}
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

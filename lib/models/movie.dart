@@ -1,3 +1,4 @@
+
 import 'dart:convert';
 
 class Movie {
@@ -70,3 +71,4 @@ class Movie {
         voteCount   : json["vote_count"],
     );
 }
+

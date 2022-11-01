@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:movie_app/screens/screens.dart';
+import 'package:peliculas/screens/screens.dart';
 import 'package:provider/provider.dart';
 
+import 'package:peliculas/providers/movies_provider.dart';
+ 
 void main() => runApp(AppState());
 
 
@@ -17,20 +19,24 @@ class AppState extends StatelessWidget {
     );
   }
 }
+
+
+ 
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Peliculas',
+      title: 'Películas',
       initialRoute: 'home',
       routes: {
-        'home': (context) => const HomeScreen(),
-        'details': (context) => DetailsScreen(),
+        'home':    ( _ ) => HomeScreen(),
+        'details': ( _ ) => DetailsScreen(),
       },
-      theme: ThemeData.dark().copyWith(
-        appBarTheme: const AppBarTheme(
-          color: Colors.indigo,
-        ),
+      theme: ThemeData.light().copyWith(
+        appBarTheme: AppBarTheme(
+          color: Colors.indigo
+        )
       ),
     );
   }

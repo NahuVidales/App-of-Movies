@@ -4,7 +4,10 @@
 
 import 'dart:convert';
 
+import 'movie.dart';
+
 class NowPlayingResponse {
+  
     NowPlayingResponse({
         required this.dates,
         required this.page,
@@ -21,23 +24,13 @@ class NowPlayingResponse {
 
     factory NowPlayingResponse.fromJson(String str) => NowPlayingResponse.fromMap(json.decode(str));
 
-
-
     factory NowPlayingResponse.fromMap(Map<String, dynamic> json) => NowPlayingResponse(
-        dates: Dates.fromMap(json["dates"]),
-        page: json["page"],
-        results: List<Movie>.from(json["results"].map((x) => Movie.fromMap(x))),
-        totalPages: json["total_pages"],
+        dates       : Dates.fromMap(json["dates"]),
+        page        : json["page"],
+        results     : List<Movie>.from( json["results"].map((x) => Movie.fromMap(x))),
+        totalPages  : json["total_pages"],
         totalResults: json["total_results"],
     );
-
-    Map<String, dynamic> toMap() => {
-        "dates": dates.toMap(),
-        "page": page,
-        "results": List<dynamic>.from(results.map((x) => x.toMap())),
-        "total_pages": totalPages,
-        "total_results": totalResults,
-    };
 }
 
 class Dates {
@@ -55,9 +48,5 @@ class Dates {
         maximum: DateTime.parse(json["maximum"]),
         minimum: DateTime.parse(json["minimum"]),
     );
-
-    Map<String, dynamic> toMap() => {
-        "maximum": "${maximum.year.toString().padLeft(4, '0')}-${maximum.month.toString().padLeft(2, '0')}-${maximum.day.toString().padLeft(2, '0')}",
-        "minimum": "${minimum.year.toString().padLeft(4, '0')}-${minimum.month.toString().padLeft(2, '0')}-${minimum.day.toString().padLeft(2, '0')}",
-    };
 }
+
